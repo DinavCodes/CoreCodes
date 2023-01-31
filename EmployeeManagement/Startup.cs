@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using EmployeeManagement.Models;
 
 namespace EmployeeManagement
 {
@@ -27,6 +28,7 @@ namespace EmployeeManagement
         {
             services.AddRazorPages();
             services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
 
         }
 
